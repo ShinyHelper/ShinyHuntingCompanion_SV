@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import OutbreakCounterPage from './pages/OutbreakCounter';
+import SandwichesPage from './pages/Sandwiches';
+import PokemonPage from './pages/PokemonPage';
+import GuidePage from './pages/Guide';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <Header></Header>
+        <Routes>
+            <Route path='/' element={<App />} />
+            <Route path='/counter' element={<OutbreakCounterPage />} />
+            <Route path='/sandwiches' element={<SandwichesPage />} />
+            <Route path='/guide' element={<GuidePage />} />
+            <Route path='/search/:pokemonName' element={<PokemonPage />} />
+        </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
