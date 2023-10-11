@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ActivePokemon } from "../contexts/activePokemon";
 import fetchData from "../components/apiCall";
 import { ApiContext } from "../contexts/apiContext";
+import capitalise from "../components/capitalise";
 
 export default function PokemonPage() {
     let { pokemonName } = useParams();
@@ -20,20 +21,22 @@ export default function PokemonPage() {
     }, [pokemonName]);
 
     if (!activePokemon.name) {
-        return <p>Searching</p>;
+        return <p>Searching...</p>;
     } else {
         return (
             <div>
-                <h1>This is the page for {pokemonName}</h1>
+                <h1>{capitalise(pokemonName)}</h1>
                 <div>
-                    <p>{activePokemon.name}</p>
                     <p>Warning! This pokemon may have the following moves:</p>
                     {activePokemon.warning.map((element) => {
-                        return <p>{element}</p>;
+                        return <p key={element}>{capitalise(element)}</p>;
                     })}
-                    <p>
-                        front sprite: <img src={activePokemon.sprites.front_default}></img>
-                    </p>
+                    <div id="defaultImage">
+                        default: <img src={activePokemon.sprites.front_default}></img>
+                    </div>
+                    <div id="shinyImage">
+                        shiny: <img src={activePokemon.sprites.front_shiny}></img>
+                    </div>
                 </div>
             </div>
         );

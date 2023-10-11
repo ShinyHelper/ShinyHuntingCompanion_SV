@@ -1,12 +1,11 @@
 export default async function fetchData(url) {
     let response = await fetch(url);
     let responseData = await response.json();
-    console.log(responseData)
+    console.log(responseData);
     let niceData = await makeDataNice(responseData);
-    console.log(niceData)
+    console.log(niceData);
     return niceData;
 }
-
 
 // this function strips unneeded data and formatting.
 function makeDataNice(data) {
@@ -23,7 +22,7 @@ function makeDataNice(data) {
         niceData.types.push(element.name);
     });
 
-    // These moves can all kill the pokemon that uses them. 
+    // These moves can all kill the pokemon that uses them.
     // Need to warn the user to bring countermeasures
     let warningMoves = [
         "brave-bird",
@@ -45,9 +44,15 @@ function makeDataNice(data) {
 
     data.moves.forEach((element) => {
         if (warningMoves.includes(element.move.name)) {
-            niceData.warning.push(element.move.name);
+            // This checks the pokemon will know the move in the wild
+            if (
+                element.version_group_details[element.version_group_details.length - 1]
+                    .move_learn_method.name == "level-up"
+            ) {
+                niceData.warning.push(element.move.name);
+            }
         }
     });
-    console.log(niceData)
-    return niceData
+    console.log(niceData);
+    return niceData;
 }
