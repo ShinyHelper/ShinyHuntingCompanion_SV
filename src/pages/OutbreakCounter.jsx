@@ -20,10 +20,9 @@ export default function OutbreakCounterPage(){
             {count > 45 && count <= 55 && <span>That shiny is on the horizon!</span>}
             {count > 55 && count <= 59 && <span>{60 - count} more to go!</span>}
             {count >= 60 && <span>DANGER ZONE!</span>}
-            <button className="increment" onClick={ () => setCount(count+1)}><img src ={activePokemon.sprites.front_default} /></button>
+            <button className="increment" onClick={ () => setCount(count+1)}><img src={activePokemon.sprites.front_default} /></button>
             <button className="decrement" onClick={ () => setCount(count == 0 ? count = 0 : count - 1)}>-</button>
             <button className="reset" onClick={ () => setCount(count=0)}>X</button>
-            <Stopwatch />
             </div>
         )
       } else {
