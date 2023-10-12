@@ -18,6 +18,7 @@ export default function PokemonPage() {
             let pokemonData = await fetchData(apiUrl + pokemonName);
             await setActivePokemon(pokemonData);
         }
+        // eslint-disable-next-line
     }, [pokemonName]);
 
     if (!activePokemon.name) {
@@ -32,15 +33,13 @@ export default function PokemonPage() {
                         return <p key={element}>{capitalise(element)}</p>;
                     })}
                     <div id="defaultImage">
-                        default: <img src={activePokemon.sprites.front_default}></img>
+                        default: <img alt="default sprite" src={activePokemon.sprites.front_default}></img>
                     </div>
                     <div id="shinyImage">
-                        shiny: <img src={activePokemon.sprites.front_shiny}></img>
+                        shiny: <img alt="shiny sprite" src={activePokemon.sprites.front_shiny}></img>
                     </div>
                 </div>
             </div>
         );
     }
 }
-
-async function callApi(pokemonName) {}
