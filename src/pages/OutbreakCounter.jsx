@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Stopwatch from "../components/Stopwatch";
 
 export default function OutbreakCounterPage(){
     let[count, setCount] = useState(0);
