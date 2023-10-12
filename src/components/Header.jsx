@@ -1,20 +1,45 @@
-import { NavLink } from "react-router-dom";
-import SearchBar from "./Search";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Select from "react-select";
 
-export default function Header(){
-    return(
+// This converts the incoming data into a usable format
+function tidyUp(data) {
+    let newData = [];
+    data.forEach((element) => {
+        newData.push({ value: "/search/" + element.name, label: element.name });
+    });
+    return newData;
+}
+
+export default function Header() {
+    let [pokemonList, setPokemonList] = useState([]);
+    let navigate = useNavigate();
+
+    // This creates a list on all pokemon on initial render
+    // This list is used for the searchable combobox
+    useEffect(() => {
+        fetchAllPokemon();
+        async function fetchAllPokemon() {
+            let response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=100000000");
+            let data = await response.json();
+            let cleanedData = tidyUp(data.results);
+            setPokemonList(cleanedData);
+        }
+    }, []);
+
+    return (
         <div id="header">
             This is the header
-            <NavLink to='/'>Home</NavLink>
-            {'  '}
-            <NavLink to='/counter'>Counter</NavLink>
-            {'  '}
-            <NavLink to='/sandwiches'>Sandwiches</NavLink>
-            {'  '}
-            <NavLink to='/guide'>Guide</NavLink>
-            {'  '}
-            <NavLink to='/search/pikachu'>Pikachu (for testing)</NavLink>
-            <SearchBar />
+            <NavLink to="/">Home</NavLink>
+            {"  "}
+            <NavLink to="/counter">Counter</NavLink>
+            {"  "}
+            <NavLink to="/sandwiches">Sandwiches</NavLink>
+            {"  "}
+            <NavLink to="/guide">Guide</NavLink>
+            {"  "}
+            <NavLink to="/search/pikachu">Pikachu (for testing)</NavLink>
+            <Select options={pokemonList} onChange={({ value }) => navigate(value)} />
         </div>
-    )
+    );
 }
