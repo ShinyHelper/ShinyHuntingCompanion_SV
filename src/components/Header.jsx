@@ -28,7 +28,7 @@ export default function Header() {
     }, []);
 
     return (
-        <div id="header">
+        <header id="header">
             This is the header
             <NavLink to="/">Home</NavLink>
             {"  "}
@@ -40,6 +40,6 @@ export default function Header() {
             {"  "}
             <NavLink to="/search/pikachu">Pikachu (for testing)</NavLink>
             <Select options={pokemonList} onChange={({ value }) => navigate(value)} />
-        </div>
+        </header>
     );
 }
