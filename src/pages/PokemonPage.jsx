@@ -27,10 +27,16 @@ export default function PokemonPage() {
             <div>
                 <h1>{capitalise(pokemonName)}</h1>
                 <div>
-                    <p>Warning! This pokemon may have the following moves:</p>
-                    {activePokemon.warning.map((element) => {
-                        return <p key={element}>{capitalise(element)}</p>;
-                    })}
+                    {activePokemon.warning.length > 0 ? (
+                        <div>
+                            <p>Warning! This pokemon may have the following moves:</p>
+                            {activePokemon.warning.map((element) => {
+                                return <p key={element}>{capitalise(element)}</p>;
+                            })}
+                        </div>
+                    ) : (
+                        ""
+                    )}
                     <div id="defaultImage">
                         default: <img src={activePokemon.sprites.front_default}></img>
                     </div>
