@@ -19,7 +19,6 @@ export default function OutbreakCounterPage(){
             <button className="increment" onClick={ () => setCount(count+1)}>+</button>
             <button className="decrement" onClick={ () => setCount(count == 0 ? count = 0 : count - 1)}>-</button>
             <button className="reset" onClick={ () => setCount(count=0)}>X</button>
-            <Stopwatch />
         </div>
     )
 }
