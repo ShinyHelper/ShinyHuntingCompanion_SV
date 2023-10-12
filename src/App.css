@@ -16,7 +16,10 @@ h1 {
   font-family: "Karla";
 }
 
-
+#warnings{
+  background-color: #F8AEAD;
+  border: solid 3px #ee2623;
+}
 
 
 
@@ -34,10 +37,16 @@ h1 {
   justify-content: center;
 }
 
+#warnings ul{
+  margin-top: 0.1rem;
+}
 #warnings li{
-  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: larger;
+  font-weight: 600;
 }
 #warnings {
+  color: #a60704;
   display: flex;
   flex-direction: column;
   align-items: center;
