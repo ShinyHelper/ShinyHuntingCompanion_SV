@@ -47,7 +47,7 @@ function makeDataNice(data) {
             // This checks the pokemon will know the move in the wild
             if (
                 element.version_group_details[element.version_group_details.length - 1]
-                    .move_learn_method.name == "level-up"
+                    .move_learn_method.name === "level-up"
             ) {
                 niceData.warning.push(element.move.name);
             }
