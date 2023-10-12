@@ -18,6 +18,7 @@ export default function PokemonPage() {
             let pokemonData = await fetchData(apiUrl + pokemonName);
             await setActivePokemon(pokemonData);
         }
+        // eslint-disable-next-line
     }, [pokemonName]);
 
     if (!activePokemon.name) {
@@ -42,11 +43,11 @@ export default function PokemonPage() {
                     )}
                     <div id="pokemonPreviews">
                         <div className="preview" id="defaultPreview">
-                            <img id="default_sprite" src={activePokemon.sprites.front_default} />
+                            <img alt="default sprite" id="default_sprite" src={activePokemon.sprites.front_default} />
                             <h3>Default</h3>
                         </div>
                         <div className="preview" id="shinyPreview">
-                            <img id="shiny_sprite" src={activePokemon.sprites.front_shiny} />
+                            <img alt="shiny sprite" id="shiny_sprite" src={activePokemon.sprites.front_shiny} />
                             <h3>Shiny</h3>
                         </div>
                     </div>
@@ -60,12 +61,9 @@ export default function PokemonPage() {
                         <div className="sandwich">
                             sandwich here
                         </div>
-
                     </div>
                 </div>
             </div>
         );
     }
 }
-
-async function callApi(pokemonName) {}
