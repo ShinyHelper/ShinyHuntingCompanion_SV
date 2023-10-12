@@ -24,24 +24,43 @@ export default function PokemonPage() {
         return <p>Searching...</p>;
     } else {
         return (
-            <div>
+            <div id="pokemonPage">
                 <h1>{capitalise(pokemonName)}</h1>
                 <div>
                     {activePokemon.warning.length > 0 ? (
-                        <div>
-                            <p>Warning! This pokemon may have the following moves:</p>
+                        <div id="warnings">
+                            <h3>Warning! This pokemon may have the following moves:</h3>
+                            <ul>
+
                             {activePokemon.warning.map((element) => {
-                                return <p key={element}>{capitalise(element)}</p>;
+                                return <li key={element}>{capitalise(element)}</li>;
                             })}
+                            </ul>
                         </div>
                     ) : (
                         ""
                     )}
-                    <div id="defaultImage">
-                        default: <img src={activePokemon.sprites.front_default}></img>
+                    <div id="pokemonPreviews">
+                        <div className="preview" id="defaultPreview">
+                            <img id="default_sprite" src={activePokemon.sprites.front_default} />
+                            <h3>Default</h3>
+                        </div>
+                        <div className="preview" id="shinyPreview">
+                            <img id="shiny_sprite" src={activePokemon.sprites.front_shiny} />
+                            <h3>Shiny</h3>
+                        </div>
                     </div>
-                    <div id="shinyImage">
-                        shiny: <img src={activePokemon.sprites.front_shiny}></img>
+                    <div className="info" id="sandwich">
+                        <h3>Recommended sandwiches:</h3>
+                        <h4>Non-Herba Mystica: </h4>
+                        <div className="sandwich">
+                            sandwich here
+                        </div>
+                        <h4>With Herba Mystica: </h4>
+                        <div className="sandwich">
+                            sandwich here
+                        </div>
+
                     </div>
                 </div>
             </div>
