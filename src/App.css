@@ -75,7 +75,7 @@ h1 {
   align-items: center;
 }
 
-#returnButton{
+/* #returnButton{
   align-self: flex-start;
   position: fixed;
   top: 100px;
@@ -87,7 +87,7 @@ h1 {
   border-radius: 16px;
   padding: 4px 8px;
 
-}
+} */
 
 
 #recipesDiv{
@@ -392,10 +392,10 @@ button img{
     width: 80dvw;
   }
 
-  #returnButton{
+  /* #returnButton{
     top: 90dvh;
     left: 55dvw;
     min-width: 150px
-  }
+  } */
 
 }

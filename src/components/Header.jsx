@@ -63,9 +63,9 @@ export default function Header() {
                 </div>
             </nav>
 
-            <button id="returnButton" onClick={() => navigate(-1)}>
+            {/* <button id="returnButton" onClick={() => navigate(-1)}>
                 {"< Back"}
-            </button>
+            </button> */}
         </header>
     );
 }
