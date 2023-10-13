@@ -19,7 +19,7 @@ function makeDataNice(data) {
     };
 
     data.types.forEach((element) => {
-        niceData.types.push(element.name);
+        niceData.types.push(element.type.name);
     });
 
     // These moves can all kill the pokemon that uses them.
