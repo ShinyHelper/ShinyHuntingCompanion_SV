@@ -188,12 +188,21 @@ a{
   height: 40dvh;
   width: 70dvw;
 }
+
 .decrement{
   height: 40dvh;
   width: 20dvw;
+  background-color: #fbe693;
+  border: solid rgb(164, 143, 2) 1px;
+  border-radius: 4px;
 }
 
 .reset {
+  margin-top: 5dvh;
+  background-color: #f58b8b;
+  border: solid rgb(131, 1, 1) 1px;
+  color: #a60704;
+  border-radius: 4px;
   width: 30dvw;
   height: 10dvh;
 }
