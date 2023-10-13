@@ -31,8 +31,7 @@ function Stopwatch() {
   };
 
   return (
-    <div>
-      <h1>Stopwatch</h1>
+    <div className='stopwatch'>
       <button onClick={handleButtonClick}>
         <span>{formatTime(activeTimer)}</span>
       </button>

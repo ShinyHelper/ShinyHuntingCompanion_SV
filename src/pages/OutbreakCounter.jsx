@@ -10,9 +10,9 @@ export default function OutbreakCounterPage(){
 
     if(activePokemon.name){
         return(
-            <div className="button-wrapper">
+            <div className="counter-button-wrapper">
             <h1>OutbreakCounterPage</h1>
-            <h2>{count}/60</h2>
+            <h2 className="count">{count}/60</h2>
             {count === 0 && <span>Let the shiny hunt begin!</span>}
             {count >= 1 && count <= 10 && <span>The start of something great</span>}
             {count > 10 && count <= 30 && <span>Those {activePokemon.name} don't know what hit them!</span>}
@@ -27,7 +27,7 @@ export default function OutbreakCounterPage(){
         )
       } else {
         return(
-            <div className="button-wrapper">
+            <div className="counter-button-wrapper">
             <h1>OutbreakCounterPage</h1>
             <h2>{count}/60</h2>
             {count == 0 && <span>Let the shiny hunt begin!</span>}
@@ -40,7 +40,6 @@ export default function OutbreakCounterPage(){
             <button className="increment" onClick={ () => setCount(count+1)}>+</button>
             <button className="decrement" onClick={ () => setCount(count === 0 ? count = 0 : count - 1)}>-</button>
             <button className="reset" onClick={ () => setCount(count=0)}>X</button>
-            <Stopwatch />
             </div>
         )
       }
