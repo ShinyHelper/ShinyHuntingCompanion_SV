@@ -273,6 +273,10 @@ a{
   font-size: 24px;
 }
 
+.count{
+  margin-top: 0px;
+}
+
 .counter-wrapper h2{
   font-size: 56px;
 }
@@ -301,7 +305,8 @@ a{
   width: 30dvw;
   font-size: 100px;
   margin-top: 8px;
-
+  min-height: 300px;
+  min-width: 400px;
 }
 
 .decrement:active{
@@ -317,6 +322,7 @@ a{
   border-radius: 4px;
   font-size: 50px;
   padding-bottom: 3px;
+  min-width: 400px;
 }
 
 .timer span{
@@ -347,10 +353,12 @@ a{
   width: 30dvw;
   height: 10dvh;
   font-size: 24px;
+  min-width: 400px;
 }
 
 button img{
   max-height: 20dvh;
+  min-height: 125px;
   max-width: 20dvw;
 }
 
