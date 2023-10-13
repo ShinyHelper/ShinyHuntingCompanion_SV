@@ -15,7 +15,6 @@ export default function SandwichesPage() {
 
     return (
         <div id="sandwichPage">
-            <h1>SandwichesPage</h1>
             {/* className is activeSandwich because react-router uses the active class for navLinks */}
             <div id="buttonsDiv">
                 <button
