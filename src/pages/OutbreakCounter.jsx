@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { ActivePokemon } from "../contexts/activePokemon";
+import pokeball from "../assets/451102-middle.png"
+import reset from "../assets/reset button.png"
 import capitalise from "../components/capitalise";
 
 export default function OutbreakCounterPage() {
@@ -39,17 +41,22 @@ export default function OutbreakCounterPage() {
                         "+"
                     )}
                     <h2 className="count">{count}/60</h2>
-                </button>
-                <button
-                    className="decrement"
-                    onClick={() => setCount(count === 0 ? (count = 0) : count - 1)}
-                >
-                    -
-                </button>
-                {/* active Sandwich class is used solely for styling here */}
-                <button className="reset" onClick={() => setCount((count = 0))}>
-                    Reset Counter
-                </button>
+                    <button className="increment activeSandwich" onClick={() => setCount(count + 1)}>
+                      {activePokemon.name.length > 0 ? <img alt="frontDefaultSprite" src={activePokemon.sprites.front_default} /> : 
+                      <img alt="Pokeball" src={pokeball} />}
+                        
+                    </button>
+                    <button
+                        className="decrement"
+                        onClick={() => setCount(count === 0 ? (count = 0) : count - 1)}
+                    >
+                        Subtract
+                    </button>
+                    {/* active Sandwich class is used solely for styling here */}
+                    <button className="reset" onClick={() => setCount((count = 0))}>
+                    <img className="resetimg" alt="reset icon" src={reset} />
+                    </button>
+                </div>
             </div>
         </div>
     );
