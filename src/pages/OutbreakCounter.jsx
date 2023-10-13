@@ -12,7 +12,6 @@ export default function OutbreakCounterPage() {
     return (
         <div className="counter-wrapper">
             <div className="button-wrapper">
-                <button className="increment activeSandwich" onClick={() => setCount(count + 1)}>
                     {count === 0 && <p className="directive-text">Let the shiny hunt begin!</p>}
                     {count >= 1 && count <= 10 && (
                         <p className="directive-text">The start of something great</p>
@@ -58,6 +57,5 @@ export default function OutbreakCounterPage() {
                     </button>
                 </div>
             </div>
-        </div>
     );
 }
