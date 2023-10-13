@@ -377,6 +377,9 @@ button img{
   #homeNav{
     width: 80dvw;
   }
+  #homeNav a{
+    margin-right: 1em;
+  }
 
   #homeSearchBar{
     width: 80dvw;
