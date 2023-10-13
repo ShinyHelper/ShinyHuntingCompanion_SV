@@ -159,7 +159,8 @@ header {
   background-color: #79B6D5;
   border-bottom: solid 2px #276686;
   width: 100dvw;
-
+  position: sticky;
+  top:0;
 }
 
 #guidePage li{
@@ -467,6 +468,7 @@ button img{
     padding: 4px;
     width: 100dvw;
     position: fixed;
+    top: auto;
     bottom: 0px;
   }
 
