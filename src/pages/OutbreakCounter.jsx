@@ -8,18 +8,17 @@ export default function OutbreakCounterPage() {
 
         return (
             <div className="counter-wrapper">
-                <h1>OutbreakCounterPage</h1>
-                <h2>{count}/60</h2>
-                {count === 0 && <p>Let the shiny hunt begin!</p>}
-                {count >= 1 && count <= 10 && <p>The start of something great</p>}
+                {count === 0 && <p className="directive-text">Let the shiny hunt begin!</p>}
+                {count >= 1 && count <= 10 && <p className="directive-text">The start of something great</p>}
                 {count > 10 && count <= 30 && (
-                    <p>Those {activePokemon.name} don't know what hit them!</p>
+                    <p className="directive-text">Those {activePokemon.name} don't know what hit them!</p>
                 )}
-                {count > 30 && count <= 45 && <p>More than halfway there!</p>}
-                {count > 45 && count <= 55 && <p>That shiny is on the horizon!</p>}
-                {count > 55 && count <= 59 && <p>{60 - count} more to go!</p>}
-                {count >= 60 && <p>DANGER ZONE!</p>}
+                {count > 30 && count <= 45 && <p className="directive-text">More than halfway there!</p>}
+                {count > 45 && count <= 55 && <p className="directive-text">That shiny is on the horizon!</p>}
+                {count > 55 && count <= 59 && <p className="directive-text">{60 - count} more to go!</p>}
+                {count >= 60 && <p className="directive-text">DANGER ZONE!</p>}
                 <div className="button-wrapper">
+                    <h2 className="count">{count}/60</h2>
                     <button className="increment activeSandwich" onClick={() => setCount(count + 1)}>
                       {activePokemon.name.length > 0 ? <img alt="frontDefaultSprite" src={activePokemon.sprites.front_default} /> : '+'}
                         
