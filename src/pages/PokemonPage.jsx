@@ -38,11 +38,11 @@ export default function PokemonPage() {
         return (
             <div id="pokemonPage">
                 <h1>{capitalise(pokemonName)}</h1>
-                <div>
+                {/* <div> */}
                     {/* Includes warning element if pokemon has self-damaging moves */}
                     {activePokemon.warning.length > 0 ? (
                         <div id="warnings">
-                            <h3>Warning! This pokemon may have the following moves:</h3>
+                            <h3>Warning! This pokemon may have the following self-harming moves:</h3>
                             <ul>
                                 {activePokemon.warning.map((element) => {
                                     return <li key={element}>{capitalise(element)}</li>;
@@ -99,7 +99,7 @@ export default function PokemonPage() {
                         </div>
                     </div>
                 </div>
-            </div>
+            // </div>
         );
     }
 }
