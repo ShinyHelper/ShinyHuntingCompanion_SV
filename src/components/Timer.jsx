@@ -19,6 +19,7 @@ function Stopwatch() {
     return () => {
       clearInterval(interval);
     };
+    // eslint-disable-next-line
   }, [isRunning]);
 
   const handleButtonClick = () => {

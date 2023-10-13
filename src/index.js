@@ -19,19 +19,19 @@ root.render(
     <React.StrictMode>
         <ApiProvider>
             <ActiveTimerProvider>
-            <ActivePokemonProvider>
-                <BrowserRouter>
-                    <Header />
-                    <Stopwatch />
-                    <Routes>
-                        <Route path="/" element={<App />} />
-                        <Route path="/counter" element={<OutbreakCounterPage />} />
-                        <Route path="/sandwiches" element={<SandwichesPage />} />
-                        <Route path="/guide" element={<GuidePage />} />
-                        <Route path="/search/:pokemonName" element={<PokemonPage />} />
-                    </Routes>
-                </BrowserRouter>
-            </ActivePokemonProvider>
+                <ActivePokemonProvider>
+                    <BrowserRouter>
+                        <Header />
+                        <Stopwatch />
+                        <Routes>
+                            <Route path="/" element={<App />} />
+                            <Route path="/counter" element={<OutbreakCounterPage />} />
+                            <Route path="/sandwiches" element={<SandwichesPage />} />
+                            <Route path="/guide" element={<GuidePage />} />
+                            <Route path="/search/:pokemonName" element={<PokemonPage />} />
+                        </Routes>
+                    </BrowserRouter>
+                </ActivePokemonProvider>
             </ActiveTimerProvider>
         </ApiProvider>
     </React.StrictMode>
