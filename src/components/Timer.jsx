@@ -42,6 +42,7 @@ function Stopwatch() {
         </button>
         <button onClick={resetStopwatch}>Reset</button>
       </div>
+
     </div>
   );
 }

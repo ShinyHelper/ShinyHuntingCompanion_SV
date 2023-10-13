@@ -16,7 +16,10 @@ h1 {
   font-family: "Karla";
 }
 
-
+.stopwatch{
+  position: absolute;
+  left: dvw;
+}
 
 #pokemonPage{
   display: flex;
@@ -228,11 +231,13 @@ a{
   height: 50dvh;
   width: 80dvw;
   font-size: 100px;
+
 }
 
 .decrement{
-  height: 10dvh;
-  width: 80dvw;
+  margin-top: 5px;
+  height: 30dvh;
+  width: 30dvw;
   background-color: #fbe693;
   border: solid rgb(164, 143, 2) 1px;
   border-radius: 4px;
@@ -293,6 +298,22 @@ button img{
   #recipesDiv{
     max-width: 90dvw;
     max-height: none;
+  }
+  
+  .increment{
+    width: 98dvw;
+  }
+  .decrement{
+    width: 98dvw;
+  }
+  .reset{
+    width: 98dvw;
+  }
+  .count{
+    position: absolute;
+    top: 45dvh;
+    left: 5dvw;
+    padding: 15px;
   }
 
 }
