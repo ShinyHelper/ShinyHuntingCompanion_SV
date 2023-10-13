@@ -14,45 +14,36 @@ export default function SandwichesPage() {
     let types = Object.keys(sandwichesDictionary)
 
     return (
-        <div>
+        <div id="sandwichPage">
             <h1>SandwichesPage</h1>
-            <button id="herbaMysticaButton" onClick={handleClickHM}>
-                Herba Mystica
-            </button>
-            <button id="nonHerbaMysticaButton" onClick={handleClickNonHM}>
-                Non-Herba Mystica
-            </button>
+            {/* className is activeSandwich because react-router uses the active class for navLinks */}
+            <div id="buttonsDiv">
+                <button id="herbaMysticaButton" onClick={handleClickHM} className={herbaMystica ? "activeSandwich" : ''}>
+                    Herba Mystica
+                </button>
+                <button id="nonHerbaMysticaButton" onClick={handleClickNonHM} className={!herbaMystica ? "activeSandwich" : ''}>
+                    Non-Herba Mystica
+                </button>
+            </div>
             {herbaMystica ? (
-                <div>
+                <div id="recipesDiv">
+                    {/* This creates an array of types, each type has its own array of ingredients and seasonings. 
+                    Each ingredient and seasoning has an array of images === the number needed to craft the sandwich */}
                     {types.map((type) => {
                         return (
                             <div className="typeSandwich" key={type}>
                                 <h3>{capitalise(type)}</h3>
-                                <h5>Ingredients: </h5>
                                 {Object.keys(sandwichesDictionary[type].HM.ingredients).map(
                                     (ingredient) => {
                                         return (
-                                            <div className="ingredient" key={ingredient}>
-                                                <img src={fetchSprite(ingredient)} alt={ingredient}></img>
-                                                {" : " +
-                                                    sandwichesDictionary[type].HM.ingredients[
-                                                        ingredient
-                                                    ]}
-                                            </div>
+                                            [...Array(sandwichesDictionary[type].HM.ingredients[ingredient])].map((e, i) => <img src={fetchSprite(ingredient)} alt={ingredient} key={i}></img>)
                                         );
                                     }
                                 )}
-                                <h5>Seasonings:</h5>
                                 {Object.keys(sandwichesDictionary[type].HM.seasonings).map(
                                     (seasoning) => {
                                         return (
-                                            <div className="seasoning" key={seasoning}>
-                                                <img src={fetchSprite(seasoning)} alt={seasoning}></img>
-                                                {" : " +
-                                                    sandwichesDictionary[type].HM.seasonings[
-                                                        seasoning
-                                                    ]}
-                                            </div>
+                                            [...Array(sandwichesDictionary[type].HM.seasonings[seasoning])].map((e, i) => <img src={fetchSprite(seasoning)} alt={seasoning} key={i}></img>)
                                         );
                                     }
                                 )}
@@ -61,36 +52,22 @@ export default function SandwichesPage() {
                     })}
                 </div>
             ) : (
-                <div>
+                <div id="recipesDiv">
                     {types.map((type) => {
                         return (
                             <div className="typeSandwich" key={type}>
                                 <h3>{capitalise(type)}</h3>
-                                <h5>Ingredients: </h5>
                                 {Object.keys(sandwichesDictionary[type].nonHM.ingredients).map(
                                     (ingredient) => {
                                         return (
-                                            <div className="ingredient" key={ingredient}>
-                                                <img src={fetchSprite(ingredient)} alt={ingredient} />
-                                                {" : " +
-                                                    sandwichesDictionary[type].nonHM.ingredients[
-                                                        ingredient
-                                                    ]}
-                                            </div>
+                                            [...Array(sandwichesDictionary[type].nonHM.ingredients[ingredient])].map((e, i) => <img src={fetchSprite(ingredient)} alt={ingredient} key={i}></img>)
                                         );
                                     }
                                 )}
-                                <h5>Seasonings:</h5>
                                 {Object.keys(sandwichesDictionary[type].nonHM.seasonings).map(
                                     (seasoning) => {
                                         return (
-                                            <div className="seasoning" key={seasoning}>
-                                                <img src={fetchSprite(seasoning)} alt={seasoning}></img>
-                                                {" : " +
-                                                    sandwichesDictionary[type].nonHM.seasonings[
-                                                        seasoning
-                                                    ]}
-                                            </div>
+                                            [...Array(sandwichesDictionary[type].nonHM.seasonings[seasoning])].map((e, i) => <img src={fetchSprite(seasoning)} alt={seasoning} key={i}></img>)
                                         );
                                     }
                                 )}

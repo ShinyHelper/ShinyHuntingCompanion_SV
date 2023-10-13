@@ -37,6 +37,40 @@ h1 {
   justify-content: center;
 }
 
+.activeSandwich{
+  background-color: rgb(164, 233, 164);
+  color: green;
+  border: solid olive 1px;
+  border-radius: 4px;
+}
+
+#sandwichPage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#recipesDiv{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 940px;
+  align-items:center;
+  width: 800px;
+}
+
+#buttonsDiv{
+  width: 280px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+#buttonsDiv button{
+  width: 100px;
+  border-radius: 1px;
+}
+
 #warnings ul{
   margin-top: 0.1rem;
 }
