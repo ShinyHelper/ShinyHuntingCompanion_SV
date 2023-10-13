@@ -356,15 +356,21 @@ button img{
     max-width: 90dvw;
     max-height: none;
   }
+
+  .searchActive{
+    width: 40dvw;
+  }
   
   .increment{
     width: 98dvw;
   }
   .decrement{
+    height: 20dvh;
     width: 98dvw;
   }
   .reset{
     width: 98dvw;
+    margin-top: 4px;
   }
   .count{
     position: absolute;
@@ -387,8 +393,9 @@ button img{
   }
 
   #returnButton{
-    top: 90%;
-    left: 75dvw;
+    top: 90dvh;
+    left: 55dvw;
+    min-width: 150px
   }
 
 }
