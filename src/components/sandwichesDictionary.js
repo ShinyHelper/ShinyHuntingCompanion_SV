@@ -1,4 +1,4 @@
-export default sandwichesDictionary = {
+const sandwichesDictionary = {
     flying: {
         nonHM: {ingredients: {"Egg": 4, "Prosciutto": 2}, seasonings: {"Ketchup": 1}}, 
         HM: {ingredients: {"Prosciutto": 1}, seasonings: {"Salty Herba Mystica": 2}}
@@ -72,3 +72,5 @@ export default sandwichesDictionary = {
         HM: {ingredients: {"Avocado": 1}, seasonings: {"Salty Herba Mystica": 2}}
     },
 }
+
+export default sandwichesDictionary 
