@@ -14,7 +14,7 @@ function tidyUp(data) {
 export default function Header() {
     let [pokemonList, setPokemonList] = useState([]);
     let navigate = useNavigate();
-    let [searchActive, setSearchActive] = useState(false)
+    let [searchActive, setSearchActive] = useState(false);
 
     // This creates a list on all pokemon on initial render
     // This list is used for the searchable combobox
@@ -28,9 +28,8 @@ export default function Header() {
         }
     }, []);
 
-
-    function handleFocus(){
-        setSearchActive(!searchActive)
+    function handleFocus() {
+        setSearchActive(!searchActive);
     }
 
     return (
@@ -43,10 +42,22 @@ export default function Header() {
                 <NavLink to="/sandwiches">Sandwiches</NavLink>
                 {"  "}
                 <NavLink to="/guide">Guide</NavLink>
-                <div id="searchBar" className={searchActive ? 'searchActive' : 'searchNotActive'}>
-                    <Select  options={pokemonList} onChange={({ value }) => navigate(value)} onFocus={handleFocus} onBlur={handleFocus}/>
+                <div id="searchBar" className={searchActive ? "searchActive" : "searchNotActive"}>
+                    <Select
+                        options={pokemonList}
+                        onChange={({ value }) => navigate(value)}
+                        onFocus={handleFocus}
+                        onBlur={handleFocus}
+                    />
                 </div>
             </nav>
+            {window.location.href === "https://shiny-companion.netlify.app/" ? (
+                ""
+            ) : (
+                <button id="returnButton" onClick={() => navigate(-1)}>
+                    {"< Back"}
+                </button>
+            )}
         </header>
     );
 }
