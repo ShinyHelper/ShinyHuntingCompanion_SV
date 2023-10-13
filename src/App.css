@@ -263,10 +263,6 @@ button img{
   color: #276686;
 }
 
-.visible{
-  /* display: inherit; */
-}
-
 .hidden{
   display: none;
 }
