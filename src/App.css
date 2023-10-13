@@ -227,8 +227,15 @@ nav{
   color: #0d6571;
   border: solid #0c5963 2px;
   padding: 4px 8px;
+  
+}
+#startCounting:hover{
+  color: #C1F8FF;
+  border: solid #C1F8FF 2px;
+  background-color: #06363c;
 
 }
+
 a:hover{
   color: #C1F8FF;
   border: solid #C1F8FF 2px;
