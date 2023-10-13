@@ -9,7 +9,6 @@ export default function OutbreakCounterPage() {
     return (
         <div className="counter-wrapper">
             <div className="button-wrapper">
-                <h2 className="count">{count}/60</h2>
                 <button className="increment activeSandwich" onClick={() => setCount(count + 1)}>
                     {count === 0 && <p className="directive-text">Let the shiny hunt begin!</p>}
                     {count >= 1 && count <= 10 && (
@@ -31,10 +30,14 @@ export default function OutbreakCounterPage() {
                     )}
                     {count >= 60 && <p className="directive-text">DANGER ZONE!</p>}
                     {activePokemon.name.length > 0 ? (
+                      <>
                         <img alt="frontDefaultSprite" src={activePokemon.sprites.front_default} />
+                        <img alt="frontDefaultSprite" src={activePokemon.sprites.front_shiny} />
+                      </>
                     ) : (
                         "+"
                     )}
+                    <h2 className="count">{count}/60</h2>
                 </button>
                 <button
                     className="decrement"

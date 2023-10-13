@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { ActivePokemon } from "../contexts/activePokemon";
 import fetchData from "../components/apiCall";
 import { ApiContext } from "../contexts/apiContext";
@@ -75,6 +75,7 @@ export default function PokemonPage() {
                         Outbreaks?{" "}
                         {outbreakPokemon.includes(capitalise(activePokemon.name)) ? "✔" : "❌"}
                     </h3>
+                        {outbreakPokemon.includes(capitalise(activePokemon.name)) ? <NavLink id="startCounting" to={"/counter"}>Start Counting!</NavLink> : ""}
                 </div>
                 <div className="info" id="sandwichPage">
                     <h3>Recommended sandwiches:</h3>

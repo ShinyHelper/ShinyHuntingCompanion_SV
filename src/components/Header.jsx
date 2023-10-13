@@ -59,6 +59,7 @@ export default function Header() {
                         onChange={({ value }) => navigate(value)}
                         onFocus={handleFocus}
                         onBlur={handleFocus}
+                        menuPlacement={window.innerWidth > 900 ? "bottom" : "top"}
                     />
                 </div>
             </nav>

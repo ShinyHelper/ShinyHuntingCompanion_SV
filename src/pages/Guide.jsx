@@ -1,7 +1,6 @@
 export default function GuidePage() {
     return (
         <div id="guidePage">
-            <h1>Guide</h1>
             <h1>How to find a shiny Pokémon using Mass Outbreaks</h1>
             <p>
                 Shiny hunting in Mass Outbreaks is advisable (if you have an outbreak of interest)
@@ -18,17 +17,12 @@ export default function GuidePage() {
 
                 <li>
                     Defeat 60 of the mass outbreak Pokémon. You can use the Counter to keep track of this number!
-                    Be careful not to overhunt the Pokémon, as this
-                    can cause the outbreak to end. This typically requires you to defeat over 100 of
-                    the Pokémon. (Restart your game if this happens.) Note that this is not a
-                    “chain” as used in previous Pokémon games. You can battle other Pokémon between
-                    the 60, run from battles, leave the outbreak and come back, etc. There is no
-                    “chain” to break.
+                    Be careful not to overhunt the Pokémon, as this can cause the outbreak to end.
                 </li>
-                <li>Save your game again once you’re sure you’ve defeated at least 60.</li>
+                <li>Save your game again once you’ve defeated at least 60.</li>
                 <li>
                     If you have Herba Mystica, make a sandwich for the outbreak Pokémon’s type using
-                    the recipes provided on each pokemon's page. Rates are quite high even without the Sparkling Power
+                    the recipes provided. Rates are quite high even without the Sparkling Power
                     sandwich, so don’t stress if you don’t have any Herba Mystica.
                 </li>
                 <li>
