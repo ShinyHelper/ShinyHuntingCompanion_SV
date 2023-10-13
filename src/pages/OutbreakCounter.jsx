@@ -20,6 +20,10 @@ export default function OutbreakCounterPage() {
                 {count > 55 && count <= 59 && <p>{60 - count} more to go!</p>}
                 {count >= 60 && <p>DANGER ZONE!</p>}
                 <div className="button-wrapper">
+                    <button className="increment activeSandwich" onClick={() => setCount(count + 1)}>
+                      {activePokemon.name.length > 0 ? <img alt="frontDefaultSprite" src={activePokemon.sprites.front_default} /> : '+'}
+                        
+                    </button>
                     <button
                         className="decrement"
                         onClick={() => setCount(count === 0 ? (count = 0) : count - 1)}
@@ -27,10 +31,6 @@ export default function OutbreakCounterPage() {
                         -
                     </button>
                     {/* active Sandwich class is used solely for styling here */}
-                    <button className="increment activeSandwich" onClick={() => setCount(count + 1)}>
-                      {activePokemon.name.length > 0 ? <img alt="frontDefaultSprite" src={activePokemon.sprites.front_default} /> : '+'}
-                        
-                    </button>
                     <button className="reset" onClick={() => setCount((count = 0))}>
                         Reset Counter
                     </button>
