@@ -11,14 +11,18 @@ import PokemonPage from "./pages/PokemonPage";
 import GuidePage from "./pages/Guide";
 import ApiProvider from "./contexts/apiContext";
 import ActivePokemonProvider from "./contexts/activePokemon";
+import ActiveTimerProvider from "./contexts/timerStatus";
+import Stopwatch from "./components/Timer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <ApiProvider>
+            <ActiveTimerProvider>
             <ActivePokemonProvider>
                 <BrowserRouter>
                     <Header />
+                    <Stopwatch />
                     <Routes>
                         <Route path="/" element={<App />} />
                         <Route path="/counter" element={<OutbreakCounterPage />} />
@@ -28,6 +32,7 @@ root.render(
                     </Routes>
                 </BrowserRouter>
             </ActivePokemonProvider>
+            </ActiveTimerProvider>
         </ApiProvider>
     </React.StrictMode>
 );

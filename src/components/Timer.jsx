@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { ActiveTimer } from '../contexts/timerStatus';
 
 function Stopwatch() {
   const [isRunning, setIsRunning] = useState(false);
-  const [time, setTime] = useState(0);
+  const { activeTimer, setActiveTimer } = useContext(ActiveTimer);
 
   useEffect(() => {
     let interval;
 
     if (isRunning) {
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 1);
+        setActiveTimer((prevTime) => prevTime + 1);
       }, 1000);
     } else {
       clearInterval(interval);
@@ -26,14 +27,14 @@ function Stopwatch() {
 
   const resetStopwatch = () => {
     setIsRunning(false);
-    setTime(0);
+    setActiveTimer(0);
   };
 
   return (
     <div>
       <h1>Stopwatch</h1>
       <button onClick={handleButtonClick}>
-        <span>{formatTime(time)}</span>
+        <span>{formatTime(activeTimer)}</span>
       </button>
       <button onClick={resetStopwatch}>Reset</button>
     </div>
