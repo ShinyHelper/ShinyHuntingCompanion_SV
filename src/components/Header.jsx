@@ -14,6 +14,7 @@ function tidyUp(data) {
 export default function Header() {
     let [pokemonList, setPokemonList] = useState([]);
     let navigate = useNavigate();
+    let [searchActive, setSearchActive] = useState(false)
 
     // This creates a list on all pokemon on initial render
     // This list is used for the searchable combobox
@@ -27,19 +28,25 @@ export default function Header() {
         }
     }, []);
 
+
+    function handleFocus(){
+        setSearchActive(!searchActive)
+    }
+
     return (
         <header id="header">
-            This is the header
-            <NavLink to="/">Home</NavLink>
-            {"  "}
-            <NavLink to="/counter">Counter</NavLink>
-            {"  "}
-            <NavLink to="/sandwiches">Sandwiches</NavLink>
-            {"  "}
-            <NavLink to="/guide">Guide</NavLink>
-            {"  "}
-            <NavLink to="/search/pikachu">Pikachu (for testing)</NavLink>
-            <Select options={pokemonList} onChange={({ value }) => navigate(value)} />
+            <nav>
+                <NavLink to="/">Home</NavLink>
+                {"  "}
+                <NavLink to="/counter">Counter</NavLink>
+                {"  "}
+                <NavLink to="/sandwiches">Sandwiches</NavLink>
+                {"  "}
+                <NavLink to="/guide">Guide</NavLink>
+                <div id="searchBar" className={searchActive ? 'searchActive' : 'searchNotActive'}>
+                    <Select  options={pokemonList} onChange={({ value }) => navigate(value)} onFocus={handleFocus} onBlur={handleFocus}/>
+                </div>
+            </nav>
         </header>
     );
 }
