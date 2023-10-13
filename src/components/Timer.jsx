@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ActiveTimer } from '../contexts/timerStatus';
+import { TimerToggle } from '../contexts/timerToggle';
 
 function Stopwatch() {
   const [isRunning, setIsRunning] = useState(false);
   const { activeTimer, setActiveTimer } = useContext(ActiveTimer);
+  const {timerStatus} = useContext(TimerToggle)
 
   useEffect(() => {
     let interval;
@@ -32,11 +34,15 @@ function Stopwatch() {
   };
 
   return (
-    <div className='stopwatch'>
-      <button onClick={handleButtonClick}>
-        <span>{formatTime(activeTimer)}</span>
-      </button>
-      <button onClick={resetStopwatch}>Reset</button>
+    <div className={'timer ' + (timerStatus ? 'visible' : 'hidden')} >
+      <span>{formatTime(activeTimer)}</span>
+      <div id='wrapper'>
+        <button onClick={handleButtonClick} className={'timerButton ' + (isRunning ? 'stopButton' : 'activeSandwich')}>
+          {isRunning ? "Stop" : "Start"}
+        </button>
+        <button onClick={resetStopwatch}>Reset</button>
+      </div>
+
     </div>
   );
 }

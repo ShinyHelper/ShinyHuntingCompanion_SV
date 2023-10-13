@@ -13,25 +13,28 @@ import ApiProvider from "./contexts/apiContext";
 import ActivePokemonProvider from "./contexts/activePokemon";
 import ActiveTimerProvider from "./contexts/timerStatus";
 import Stopwatch from "./components/Timer";
+import TimerToggleProvider from "./contexts/timerToggle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <ApiProvider>
             <ActiveTimerProvider>
-                <ActivePokemonProvider>
-                    <BrowserRouter>
-                        <Header />
-                        <Stopwatch />
-                        <Routes>
-                            <Route path="/" element={<App />} />
-                            <Route path="/counter" element={<OutbreakCounterPage />} />
-                            <Route path="/sandwiches" element={<SandwichesPage />} />
-                            <Route path="/guide" element={<GuidePage />} />
-                            <Route path="/search/:pokemonName" element={<PokemonPage />} />
-                        </Routes>
-                    </BrowserRouter>
-                </ActivePokemonProvider>
+                <TimerToggleProvider>
+                    <ActivePokemonProvider>
+                        <BrowserRouter>
+                            <Header />
+                            <Stopwatch />
+                            <Routes>
+                                <Route path="/" element={<App />} />
+                                <Route path="/counter" element={<OutbreakCounterPage />} />
+                                <Route path="/sandwiches" element={<SandwichesPage />} />
+                                <Route path="/guide" element={<GuidePage />} />
+                                <Route path="/search/:pokemonName" element={<PokemonPage />} />
+                            </Routes>
+                        </BrowserRouter>
+                    </ActivePokemonProvider>
+                </TimerToggleProvider>
             </ActiveTimerProvider>
         </ApiProvider>
     </React.StrictMode>
