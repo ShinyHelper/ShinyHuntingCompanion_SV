@@ -37,7 +37,7 @@ function Stopwatch() {
     <div className={'timer ' + (timerStatus ? 'visible' : 'hidden')} >
       <span>{formatTime(activeTimer)}</span>
       <div id='wrapper'>
-        <button onClick={handleButtonClick} className={'timerButton ' + (isRunning ? 'stopButton' : '')}>
+        <button onClick={handleButtonClick} className={'timerButton ' + (isRunning ? 'stopButton' : 'activeSandwich')}>
           {isRunning ? "Stop" : "Start"}
         </button>
         <button onClick={resetStopwatch}>Reset</button>

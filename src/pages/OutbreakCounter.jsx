@@ -8,7 +8,6 @@ export default function OutbreakCounterPage() {
 
         return (
             <div className="counter-wrapper">
-                <h1>OutbreakCounterPage</h1>
                 <h2>{count}/60</h2>
                 {count === 0 && <p>Let the shiny hunt begin!</p>}
                 {count >= 1 && count <= 10 && <p>The start of something great</p>}
