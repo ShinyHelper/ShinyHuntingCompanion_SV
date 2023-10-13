@@ -37,6 +37,8 @@ h1 {
   justify-content: center;
 }
 
+
+
 .activeSandwich{
   background-color: rgb(164, 233, 164);
   color: green;
@@ -49,14 +51,20 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #recipesDiv{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 940px;
+  max-height: 940px;
   align-items:center;
   width: 800px;
+  margin-bottom: 2rem;
 }
 
 #buttonsDiv{

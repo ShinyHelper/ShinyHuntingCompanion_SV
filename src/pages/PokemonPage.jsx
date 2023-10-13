@@ -5,6 +5,7 @@ import fetchData from "../components/apiCall";
 import { ApiContext } from "../contexts/apiContext";
 import capitalise from "../components/capitalise";
 import SandwichRecipe from "../components/SandwichRecipe";
+import outbreakPokemon from "../components/outbreaksList";
 
 export default function PokemonPage() {
     let { pokemonName } = useParams();
@@ -69,7 +70,10 @@ export default function PokemonPage() {
                             <h3>Shiny</h3>
                         </div>
                     </div>
-                    <div className="info" id="sandwich">
+                    <div className="info">
+                        <h3>Outbreaks? {outbreakPokemon.includes(capitalise(activePokemon.name)) ? '✔' : '❌'}</h3>
+                    </div>
+                    <div className="info" id="sandwichPage">
                         <h3>Recommended sandwiches:</h3>
                         {/* className is activeSandwich because react-router uses the active class for navLinks */}
                         <div id="buttonsDiv">
@@ -92,10 +96,6 @@ export default function PokemonPage() {
                             {activePokemon.types.map((type) => {
                                 return <div>{SandwichRecipe(type, herbaMystica)}</div>;
                             })}
-                            <h4>Non-Herba Mystica: </h4>
-                            <div className="sandwich">sandwich here</div>
-                            <h4>With Herba Mystica: </h4>
-                            <div className="sandwich">sandwich here</div>
                         </div>
                     </div>
                 </div>
