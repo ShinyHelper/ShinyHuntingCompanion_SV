@@ -3,9 +3,9 @@ import { ActiveTimer } from '../contexts/timerStatus';
 import { TimerToggle } from '../contexts/timerToggle';
 
 function Stopwatch() {
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(true);
   const { activeTimer, setActiveTimer } = useContext(ActiveTimer);
-  const {timerStatus} = useContext(TimerToggle)
+  const {timerStatus, setTimerStatus} = useContext(TimerToggle)
 
   useEffect(() => {
     let interval;
@@ -31,6 +31,7 @@ function Stopwatch() {
   const resetStopwatch = () => {
     setIsRunning(false);
     setActiveTimer(0);
+    setTimerStatus(false)
   };
 
   return (
@@ -40,7 +41,7 @@ function Stopwatch() {
         <button onClick={handleButtonClick} className={'timerButton ' + (isRunning ? 'stopButton' : 'activeSandwich')}>
           {isRunning ? "Stop" : "Start"}
         </button>
-        <button onClick={resetStopwatch}>Reset</button>
+        <button onClick={resetStopwatch}>Finish Hunt</button>
       </div>
 
     </div>

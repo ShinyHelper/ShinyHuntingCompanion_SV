@@ -1,3 +1,6 @@
+body{
+  background-color: #d6f5f7;
+}
 .App {
   text-align: center;
   font-family: 'Montserrat';
@@ -171,6 +174,18 @@ header {
   margin:auto;
 }
 
+#title{
+  margin-top: 20dvh;
+}
+
+#homeSearchBar{
+  width: 40dvw;
+  margin: auto;
+  margin-top: 5dvh;
+  border: 1px solid rgb(5, 68, 116);
+  border-radius: 3px;
+}
+
 .searchNotActive{
   width: 20dvw;
   margin: auto;
@@ -192,8 +207,20 @@ nav{
   align-items: center;
 }
 
+#homeNav {
+  width: 50dvw;
+  justify-content: center;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+#homeNav a{
+  margin-right: 3em;
+  color: #0d6571;
+  border: solid #0c5963 2px;
+}
+
 a{
-  /* background-color: #fff; */
   font-family: "Montserrat";
   font-weight:bold ;
   font-size: large;
@@ -204,6 +231,24 @@ a{
   border: solid #C1F8FF 2px;
   border-radius: 7px;
   height: 20px
+}
+
+#timerToggle{
+  font-family: "Montserrat";
+  font-weight:bold ;
+  font-size: large;
+  text-decoration: none;
+  color: #73ffd5;
+  padding: 0.25rem;
+  margin: 0.2rem;
+  border: solid #276686 2px;
+  border-radius: 7px;
+  height: 32px;
+  background-color: transparent;
+}
+
+.directive-text{
+  font-size: 24px;
 }
 
 .counter-wrapper h2{
@@ -221,19 +266,25 @@ a{
 
 .button-wrapper{
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.increment:active{
+  background-color: rgb(107, 212, 107);
+}
 .increment{
-  height: 50dvh;
-  width: 80dvw;
+  height: 55dvh;
+  width: 30dvw;
   font-size: 100px;
 
 }
 
+.decrement:active{
+  background-color: #f5d96a;
+
+}
 .decrement{
   margin-top: 5px;
   height: 30dvh;
@@ -257,6 +308,12 @@ a{
 }
 
 
+
+.reset:active {
+  background-color: #f35b5b;
+
+}
+
 .reset {
   margin-top: 3dvh;
   margin-bottom: 3dvh;
@@ -271,7 +328,7 @@ a{
 
 button img{
   max-height: 40dvh;
-  max-width: 40dvw;
+  max-width: 30dvw;
 }
 
 .active{
@@ -312,7 +369,8 @@ button img{
   .count{
     position: absolute;
     top: 45dvh;
-    left: 5dvw;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 15px;
   }
 

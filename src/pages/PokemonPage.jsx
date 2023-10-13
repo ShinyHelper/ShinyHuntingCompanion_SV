@@ -6,13 +6,11 @@ import { ApiContext } from "../contexts/apiContext";
 import capitalise from "../components/capitalise";
 import SandwichRecipe from "../components/SandwichRecipe";
 import outbreakPokemon from "../components/outbreaksList";
-import { TimerToggle } from "../contexts/timerToggle";
 
 export default function PokemonPage() {
     let { pokemonName } = useParams();
     let { activePokemon, setActivePokemon } = useContext(ActivePokemon);
     let { apiUrl } = useContext(ApiContext);
-    let { timerStatus, setTimerStatus } = useContext(TimerToggle);
 
     let [herbaMystica, setHerbaMystica] = useState(false);
     function handleClickHM() {
@@ -23,9 +21,6 @@ export default function PokemonPage() {
         setHerbaMystica(false);
     }
 
-    function toggleTimer() {
-        setTimerStatus(!timerStatus)
-    }
 
     useEffect(() => {
         setActivePokemon("");
@@ -44,7 +39,6 @@ export default function PokemonPage() {
         return (
             <div id="pokemonPage">
                 <h1>{capitalise(pokemonName)}</h1>
-                {/* <div> */}
                 {/* Includes warning element if pokemon has self-damaging moves */}
                 {activePokemon.warning.length > 0 ? (
                     <div id="warnings">
@@ -77,9 +71,6 @@ export default function PokemonPage() {
                     </div>
                 </div>
                 <div className="info">
-                    <button id="timerToggle" onClick={toggleTimer}>
-                        {timerStatus ? "Stop Hunt Timer" : "Start Hunt Timer?"}
-                    </button>
                     <h3>
                         Outbreaks?{" "}
                         {outbreakPokemon.includes(capitalise(activePokemon.name)) ? "✔" : "❌"}
@@ -111,7 +102,6 @@ export default function PokemonPage() {
                     </div>
                 </div>
             </div>
-            // </div>
         );
     }
 }
