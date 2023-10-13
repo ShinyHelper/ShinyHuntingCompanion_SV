@@ -31,14 +31,6 @@ export default function OutbreakCounterPage() {
                         <p className="directive-text">{60 - count} more to go!</p>
                     )}
                     {count >= 60 && <p className="directive-text">DANGER ZONE!</p>}
-                    {activePokemon.name.length > 0 ? (
-                      <>
-                        <img alt="frontDefaultSprite" src={activePokemon.sprites.front_default} />
-                        <img alt="frontDefaultSprite" src={activePokemon.sprites.front_shiny} />
-                      </>
-                    ) : (
-                        "+"
-                    )}
                     <h2 className="count">{count}/60</h2>
                     <button className="increment activeSandwich" onClick={() => setCount(count + 1)}>
                       {activePokemon.name.length > 0 ? <img alt="frontDefaultSprite" src={activePokemon.sprites.front_default} /> : 
