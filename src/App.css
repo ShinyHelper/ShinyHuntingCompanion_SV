@@ -280,15 +280,15 @@ a{
 
 .directive-text{
   font-size: 24px;
+  position: absolute;
+  top: 10dvh;
 }
 
 .count{
   margin-top: 0px;
+  position: absolute;
 }
 
-.counter-wrapper h2{
-  font-size: 56px;
-}
 .counter-wrapper{
   display: flex;
   flex-direction: column;
@@ -309,6 +309,7 @@ a{
 .increment:active{
   background-color: rgb(107, 212, 107);
 }
+
 .increment{
   height: 50dvh;
   width: 30dvw;
@@ -355,8 +356,6 @@ a{
   color: #5a0403;
   border-radius: 4px;
 }
-
-
 
 .reset:active {
   background-color: #f35b5b;
