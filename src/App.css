@@ -250,7 +250,7 @@ a{
 }
 
 
-.resetimg{
+.reset img{
   object-fit: contain;
   width: 100%;
   height: 100%;
@@ -279,14 +279,14 @@ a{
 }
 
 .directive-text{
-  font-size: 24px;
-  position: absolute;
-  top: 10dvh;
+  font-size: 2rem;
+  font-family: "Karla";
+  font-weight:bold;
 }
 
 .count{
   margin-top: 0px;
-  position: absolute;
+  font-size: 36px;
 }
 
 .counter-wrapper{
@@ -295,8 +295,6 @@ a{
   align-items: center;
   width: 90dvw;
   margin: auto;
-  font-size: 24px;
-  font-family: "Montserrat";
 }
 
 .button-wrapper{
@@ -310,13 +308,24 @@ a{
   background-color: rgb(107, 212, 107);
 }
 
+.spriteWrapper{
+  display: flex;
+  flex-direction: row;
+  margin-top: 4px;
+}
+
 .increment{
+  display: flex;
+  flex-direction: column;
   height: 50dvh;
   width: 30dvw;
   font-size: 100px;
   margin-top: 8px;
   min-height: 300px;
   min-width: 400px;
+
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -324,6 +333,7 @@ a{
   width: 100%;
   height: 100%;
   object-fit: contain;
+  margin-top: 4px;
 }
 
 .decrement:active{
