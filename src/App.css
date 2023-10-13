@@ -16,16 +16,9 @@ h1 {
   font-family: "Karla";
 }
 
-.counter-button-wrapper{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
 .stopwatch{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
+  left: dvw;
 }
 
 #pokemonPage{
@@ -179,6 +172,16 @@ a{
   height: 20px
 }
 
+.directive-text{
+  position: absolute;
+}
+
+.count{
+  position: absolute;
+  top: 40dvh;
+  padding: 15px;
+}
+
 .counter-wrapper{
   display: flex;
   flex-direction: column;
@@ -190,31 +193,31 @@ a{
 .button-wrapper{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
 .increment{
-  height: 40dvh;
-  width: 70dvw;
+  height: 45dvh;
+  margin-top: 5px;
 }
 
 .decrement{
-  height: 40dvh;
-  width: 20dvw;
+  margin-top: 5px;
+  height: 30dvh;
   background-color: #fbe693;
   border: solid rgb(164, 143, 2) 1px;
   border-radius: 4px;
 }
 
 .reset {
-  margin-top: 5dvh;
+  margin-top: 5px;
   background-color: #f58b8b;
   border: solid rgb(131, 1, 1) 1px;
   color: #a60704;
   border-radius: 4px;
   width: 30dvw;
-  height: 10dvh;
+  height: 15dvh;
 }
 
 button img{
