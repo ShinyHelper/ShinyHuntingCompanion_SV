@@ -181,4 +181,14 @@ a{
     width: 40dvw;
     min-width: 150px;
   }
+
+  #sandwichPage{
+    max-width: 90dvw;
+    max-height:none;
+  }
+  #recipesDiv{
+    max-width: 90dvw;
+    max-height: none;
+  }
+
 }
