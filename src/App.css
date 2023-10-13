@@ -386,4 +386,9 @@ button img{
     width: 80dvw;
   }
 
+  #returnButton{
+    top: 90%;
+    left: 75dvw;
+  }
+
 }
