@@ -211,6 +211,11 @@ nav{
   margin-top: 1rem;
 }
 
+#homeNav a:hover{
+  color: #C1F8FF;
+  border: solid #C1F8FF 2px;
+
+}
 #homeNav a{
   margin-right: 3em;
   color: #0d6571;
