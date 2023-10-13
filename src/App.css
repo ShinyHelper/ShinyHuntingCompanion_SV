@@ -55,7 +55,7 @@ h1 {
   align-items: center;
   margin:auto;
   margin-top: 4dvh;
-  margin-bottom: 10dvh;
+  margin-bottom: 25dvh;
 }
 
 .info{
@@ -168,7 +168,7 @@ header {
   font-size: 20px;
   width: 90dvw;
   margin:auto;
-  margin-bottom: 15dvh;
+  margin-bottom: 25dvh;
 }
 
 #title{
@@ -306,6 +306,7 @@ a{
   height: 30dvh;
   width: 30dvw;
   background-color: #fbe693;
+  color: #7a6e3c;
   border: solid rgb(164, 143, 2) 1px;
   border-radius: 4px;
   font-size: 50px;
@@ -346,7 +347,6 @@ a{
 
 button img{
   max-height: 20dvh;
-  min-height: 125px;
   max-width: 20dvw;
 }
 
@@ -421,6 +421,11 @@ button img{
   .timer{
     left: 50%;
     bottom: 15dvh;
+  }
+
+  button img{
+    max-width: 35dvw;
+    max-height: 25dvh;
   }
 
   /* #returnButton{

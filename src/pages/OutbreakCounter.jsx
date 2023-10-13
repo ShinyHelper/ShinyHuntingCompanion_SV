@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { ActivePokemon } from "../contexts/activePokemon";
+import capitalise from "../components/capitalise";
 
 export default function OutbreakCounterPage() {
     let [count, setCount] = useState(0);
@@ -16,7 +17,7 @@ export default function OutbreakCounterPage() {
                     )}
                     {count > 10 && count <= 30 && (
                         <p className="directive-text">
-                            Those {activePokemon.name || 'pokemon'} don't know what hit them!
+                            Those {capitalise(activePokemon.name) || 'pokemon'} don't know what hit them!
                         </p>
                     )}
                     {count > 30 && count <= 45 && (
