@@ -1,3 +1,6 @@
+body{
+  background-color: #d6f5f7;
+}
 .App {
   text-align: center;
   font-family: 'Montserrat';
@@ -51,12 +54,46 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin:auto;
+  margin-top: 4dvh;
+  margin-bottom: 25dvh;
 }
+
 .info{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.timer{
+  width: 200px;
+  position: fixed;
+  bottom: 10dvh;
+  left: 20%;
+  transform: translateX(-50%);
+  background-color: #79B6D5;
+  border: solid 2px #276686;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #returnButton{
+  align-self: flex-start;
+  position: fixed;
+  top: 100px;
+  left: 3%;
+  font-size: 36px;
+  z-index: 3;
+  background-color: #a9dcf5;
+  border: solid 2px #276686;
+  border-radius: 16px;
+  padding: 4px 8px;
+
+} */
+
 
 #recipesDiv{
   display: flex;
@@ -110,17 +147,8 @@ h1 {
   width: 244px;
 }
 
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.timer button {
+  margin-right: 4px;
 }
 
 .App-link {
@@ -129,13 +157,31 @@ h1 {
 
 header {
   background-color: #79B6D5;
-  border-bottom: solid 2px #276686
+  border-bottom: solid 2px #276686;
+  width: 100dvw;
 
 }
 
+#guidePage li{
+  margin-bottom: 8px;
+}
 #guidePage{
+  font-size: 20px;
   width: 90dvw;
   margin:auto;
+  margin-bottom: 25dvh;
+}
+
+#title{
+  margin-top: 20dvh;
+}
+
+#homeSearchBar{
+  width: 40dvw;
+  margin: auto;
+  margin-top: 5dvh;
+  border: 1px solid rgb(5, 68, 116);
+  border-radius: 3px;
 }
 
 .searchNotActive{
@@ -159,8 +205,38 @@ nav{
   align-items: center;
 }
 
+#homeNav {
+  width: 50dvw;
+  justify-content: center;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+#homeNav a:hover{
+  color: #C1F8FF;
+  border: solid #C1F8FF 2px;
+
+}
+#homeNav a{
+  margin-right: 3em;
+  color: #0d6571;
+  border: solid #0c5963 2px;
+}
+
+#startCounting{
+  color: #0d6571;
+  border: solid #0c5963 2px;
+  padding: 4px 8px;
+
+}
+a:hover{
+  color: #C1F8FF;
+  border: solid #C1F8FF 2px;
+  background-color: #06363c;
+
+}
+
 a{
-  /* background-color: #fff; */
   font-family: "Montserrat";
   font-weight:bold ;
   font-size: large;
@@ -172,6 +248,7 @@ a{
   border-radius: 7px;
   height: 20px
 }
+
 
 .resetimg{
   object-fit: contain;
@@ -187,38 +264,60 @@ a{
  transform: rotate(360deg);
 }
 
+#timerToggle{
+  font-family: "Montserrat";
+  font-weight:bold ;
+  font-size: large;
+  text-decoration: none;
+  color: #73ffd5;
+  padding: 0.25rem;
+  margin: 0.2rem;
+  border: solid #276686 2px;
+  border-radius: 7px;
+  height: 32px;
+  background-color: transparent;
+}
+
 .directive-text{
-  position: absolute;
+  font-size: 24px;
 }
 
 .count{
-  position: absolute;
-  top: 42dvh;
-  left: 35dvw;
-  padding: 15px;
+  margin-top: 0px;
 }
 
+.counter-wrapper h2{
+  font-size: 56px;
+}
 .counter-wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90dvw;
   margin: auto;
+  font-size: 24px;
+  font-family: "Montserrat";
 }
 
 .button-wrapper{
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.increment{
-  height: 45dvh;
-  margin-top: 5px;
-  width: 30dvw;
+.increment:active{
+  background-color: rgb(107, 212, 107);
 }
+.increment{
+  height: 50dvh;
+  width: 30dvw;
+  font-size: 100px;
+  margin-top: 8px;
+  min-height: 300px;
+  min-width: 400px;
+}
+
 
 .increment img{
   width: 100%;
@@ -226,15 +325,42 @@ a{
   object-fit: contain;
 }
 
+.decrement:active{
+  background-color: #f5d96a;
+
+}
 .decrement{
   margin-top: 5px;
+  height: 26dvh;
   font-family: 'Karla';
   font-size: 2rem;
-  height: 30dvh;
+
   width: 30dvw;
   background-color: #fbe693;
+  color: #7a6e3c;
   border: solid rgb(164, 143, 2) 1px;
   border-radius: 4px;
+  font-size: 50px;
+  padding-bottom: 3px;
+  min-width: 400px;
+}
+
+.timer span{
+  font-size: 36px;
+}
+
+.stopButton{
+  background-color: #f58b8b;
+  border: solid rgb(131, 1, 1) 1px;
+  color: #5a0403;
+  border-radius: 4px;
+}
+
+
+
+.reset:active {
+  background-color: #f35b5b;
+
 }
 
 .reset {
@@ -246,16 +372,22 @@ a{
   color: #a60704;
   border-radius: 4px;
   width: 30dvw;
-  height: 15dvh;
+  height: 10dvh;
+  font-size: 24px;
+  min-width: 400px;
 }
 
 button img{
-  max-height: 40dvh;
-  max-width: 40dvw;
+  max-height: 20dvh;
+  max-width: 20dvw;
 }
 
 .active{
   color: #276686;
+}
+
+.hidden{
+  display: none;
 }
 
 @media screen and (max-width: 900px) {
@@ -280,21 +412,62 @@ button img{
     left: 10dvw;
     top: 5dvh;
   }
+  .searchActive{
+    width: 40dvw;
+  }
+  .searchNotActive{
+    width: 35dvw;
+  }
   
   .increment{
-    width: 98dvw;
+    margin-top: 8px;
+    width: 95dvw;
+    min-width: 200px;
   }
   .decrement{
-    width: 98dvw;
+    height: 19dvh;
+    width: 95dvw;
+    min-width: 200px;
   }
   .reset{
-    width: 98dvw;
+    width: 95dvw;
+    margin-top: 4px;
+    min-width: 200px;
   }
-  .count{
-    position: absolute;
-    top: 45dvh;
-    left: 5dvw;
-    padding: 15px;
+
+  #homeNav{
+    width: 80dvw;
   }
+  #homeNav a{
+    margin-right: 1em;
+    font-size: medium;
+  }
+
+  #homeSearchBar{
+    width: 80dvw;
+  }
+
+  header{
+    padding: 4px;
+    width: 100dvw;
+    position: fixed;
+    bottom: 0px;
+  }
+
+  .timer{
+    left: 50%;
+    bottom: 15dvh;
+  }
+
+  button img{
+    max-width: 35dvw;
+    max-height: 25dvh;
+  }
+
+  /* #returnButton{
+    top: 90dvh;
+    left: 55dvw;
+    min-width: 150px
+  } */
 
 }

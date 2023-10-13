@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Select from "react-select";
+import { TimerToggle } from "../contexts/timerToggle";
 
 // This converts the incoming data into a usable format
 function tidyUp(data) {
@@ -14,7 +15,12 @@ function tidyUp(data) {
 export default function Header() {
     let [pokemonList, setPokemonList] = useState([]);
     let navigate = useNavigate();
-    let [searchActive, setSearchActive] = useState(false)
+    let [searchActive, setSearchActive] = useState(false);
+    let { timerStatus, setTimerStatus } = useContext(TimerToggle);
+
+    function toggleTimer() {
+        setTimerStatus(!timerStatus);
+    }
 
     // This creates a list on all pokemon on initial render
     // This list is used for the searchable combobox
@@ -28,12 +34,13 @@ export default function Header() {
         }
     }, []);
 
-
-    function handleFocus(){
-        setSearchActive(!searchActive)
+    function handleFocus() {
+        setSearchActive(!searchActive);
     }
 
-    return (
+    return window.location.href === "https://shiny-companion.netlify.app/" ? (
+        ""
+    ) : (
         <header id="header">
             <nav>
                 <NavLink to="/">Home</NavLink>
@@ -43,10 +50,23 @@ export default function Header() {
                 <NavLink to="/sandwiches">Sandwiches</NavLink>
                 {"  "}
                 <NavLink to="/guide">Guide</NavLink>
-                <div id="searchBar" className={searchActive ? 'searchActive' : 'searchNotActive'}>
-                    <Select  options={pokemonList} onChange={({ value }) => navigate(value)} onFocus={handleFocus} onBlur={handleFocus}/>
+                <button id="timerToggle" onClick={toggleTimer}>
+                    {(timerStatus ? "Hide" : "Show") + " Hunt Timer"}
+                </button>
+                <div id="searchBar" className={searchActive ? "searchActive" : "searchNotActive"}>
+                    <Select
+                        options={pokemonList}
+                        onChange={({ value }) => navigate(value)}
+                        onFocus={handleFocus}
+                        onBlur={handleFocus}
+                        menuPlacement={window.innerWidth > 900 ? "bottom" : "top"}
+                    />
                 </div>
             </nav>
+
+            {/* <button id="returnButton" onClick={() => navigate(-1)}>
+                {"< Back"}
+            </button> */}
         </header>
     );
 }
