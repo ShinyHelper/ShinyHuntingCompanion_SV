@@ -11,6 +11,7 @@ export default function SandwichesPage() {
     function handleClickNonHM() {
         setHerbaMystica(false);
     }
+    let types = Object.keys(sandwichesDictionary)
 
     return (
         <div>
@@ -23,37 +24,35 @@ export default function SandwichesPage() {
             </button>
             {herbaMystica ? (
                 <div>
-                    {Object.keys(sandwichesDictionary).map((type) => {
+                    {types.map((type) => {
                         return (
                             <div className="typeSandwich" key={type}>
                                 <h3>{capitalise(type)}</h3>
                                 <h5>Ingredients: </h5>
                                 {Object.keys(sandwichesDictionary[type].HM.ingredients).map(
-                                    (element) => {
-                                        console.log(element);
+                                    (ingredient) => {
                                         return (
-                                            <p>
-                                                {element +
-                                                    " : " +
+                                            <div className="ingredient" key={ingredient}>
+                                                <img src={fetchSprite(ingredient)} alt={ingredient}></img>
+                                                {" : " +
                                                     sandwichesDictionary[type].HM.ingredients[
-                                                        element
+                                                        ingredient
                                                     ]}
-                                            </p>
+                                            </div>
                                         );
                                     }
                                 )}
                                 <h5>Seasonings:</h5>
                                 {Object.keys(sandwichesDictionary[type].HM.seasonings).map(
-                                    (element) => {
-                                        console.log(element);
+                                    (seasoning) => {
                                         return (
-                                            <p>
-                                                {element +
-                                                    " : " +
+                                            <div className="seasoning" key={seasoning}>
+                                                <img src={fetchSprite(seasoning)} alt={seasoning}></img>
+                                                {" : " +
                                                     sandwichesDictionary[type].HM.seasonings[
-                                                        element
+                                                        seasoning
                                                     ]}
-                                            </p>
+                                            </div>
                                         );
                                     }
                                 )}
@@ -63,45 +62,52 @@ export default function SandwichesPage() {
                 </div>
             ) : (
                 <div>
-                {Object.keys(sandwichesDictionary).map((type) => {
-                    return (
-                        <div className="typeSandwich" key={type}>
-                            <h3>{capitalise(type)}</h3>
-                            <h5>Ingredients: </h5>
-                            {Object.keys(sandwichesDictionary[type].nonHM.ingredients).map(
-                                (element) => {
-                                    console.log(element);
-                                    return (
-                                        <p>
-                                            {element +
-                                                " : " +
-                                                sandwichesDictionary[type].nonHM.ingredients[
-                                                    element
-                                                ]}
-                                        </p>
-                                    );
-                                }
-                            )}
-                            <h5>Seasonings:</h5>
-                            {Object.keys(sandwichesDictionary[type].nonHM.seasonings).map(
-                                (element) => {
-                                    console.log(element);
-                                    return (
-                                        <p>
-                                            {element +
-                                                " : " +
-                                                sandwichesDictionary[type].nonHM.seasonings[
-                                                    element
-                                                ]}
-                                        </p>
-                                    );
-                                }
-                            )}
-                        </div>
-                    );
-                })}
-            </div>
+                    {types.map((type) => {
+                        return (
+                            <div className="typeSandwich" key={type}>
+                                <h3>{capitalise(type)}</h3>
+                                <h5>Ingredients: </h5>
+                                {Object.keys(sandwichesDictionary[type].nonHM.ingredients).map(
+                                    (ingredient) => {
+                                        return (
+                                            <div className="ingredient" key={ingredient}>
+                                                <img src={fetchSprite(ingredient)} alt={ingredient} />
+                                                {" : " +
+                                                    sandwichesDictionary[type].nonHM.ingredients[
+                                                        ingredient
+                                                    ]}
+                                            </div>
+                                        );
+                                    }
+                                )}
+                                <h5>Seasonings:</h5>
+                                {Object.keys(sandwichesDictionary[type].nonHM.seasonings).map(
+                                    (seasoning) => {
+                                        return (
+                                            <div className="seasoning" key={seasoning}>
+                                                <img src={fetchSprite(seasoning)} alt={seasoning}></img>
+                                                {" : " +
+                                                    sandwichesDictionary[type].nonHM.seasonings[
+                                                        seasoning
+                                                    ]}
+                                            </div>
+                                        );
+                                    }
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
             )}
         </div>
     );
+}
+
+function fetchSprite(spriteName) {
+    let nameArray = [];
+    spriteName.split(" ").forEach((word) => {
+        nameArray.push(word.charAt(0).toLowerCase() + word.slice(1));
+    });
+    let newName = nameArray.join("");
+    return `https://www.serebii.net/itemdex/sprites/${newName}.png`;
 }

@@ -21,7 +21,7 @@ const sandwichesDictionary = {
     },
     fairy: {
         nonHM: {ingredients: {"Egg": 4, "Tomato": 2}, seasonings: {"Salt": 1}}, 
-        HM: {ingredients: {"Fairy": 1}, seasonings: {"Salty Herba Mystica": 2}}
+        HM: {ingredients: {"Tomato": 1}, seasonings: {"Salty Herba Mystica": 2}}
     },
     normal: {
         nonHM: {ingredients: {"Chorizo": 4, "Tofu": 2}, seasonings: {"Salt": 1}}, 
@@ -32,7 +32,7 @@ const sandwichesDictionary = {
         HM: {ingredients: {"Pickle": 1}, seasonings: {"Salty Herba Mystica": 2}}
     },
     water: {
-        nonHM: {ingredients: {"Rice": 4, "Herbed Sausage": 2}, seasonings: {"Chilli Sauce": 1}}, 
+        nonHM: {ingredients: {"Rice": 4, "Herbed Sausage": 2}, seasonings: {"Chili Sauce": 1}}, 
         HM: {ingredients: {"Cucumber": 1}, seasonings: {"Salty Herba Mystica": 2}}
     },
     ground: {
