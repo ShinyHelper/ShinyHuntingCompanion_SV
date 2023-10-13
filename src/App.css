@@ -18,7 +18,8 @@ h1 {
 
 .stopwatch{
   position: absolute;
-  left: dvw;
+  left: 47dvw;
+  top: 2dvh;
 }
 
 #pokemonPage{
@@ -219,6 +220,12 @@ a{
   width: 30dvw;
 }
 
+.increment img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .decrement{
   margin-top: 5px;
   font-family: 'Karla';
@@ -267,6 +274,11 @@ button img{
   #recipesDiv{
     max-width: 90dvw;
     max-height: none;
+  }
+
+  .stopwatch{
+    left: 10dvw;
+    top: 5dvh;
   }
   
   .increment{
