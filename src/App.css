@@ -169,6 +169,40 @@ a{
   height: 20px
 }
 
+.counter-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90dvw;
+  margin: auto;
+}
+
+.button-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.increment{
+  height: 40dvh;
+  width: 70dvw;
+}
+.decrement{
+  height: 40dvh;
+  width: 20dvw;
+}
+
+.reset {
+  width: 30dvw;
+  height: 10dvh;
+}
+
+button img{
+  max-height: 40dvh;
+  max-width: 40dvw;
+}
+
 .active{
   color: #276686;
 }
