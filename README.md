@@ -1,3 +1,9 @@
+# Shiny Hunting Companion
+
+Pokemon is a popular game series where players can collect creatures called pokemon. Rarely, players can find alternate forms of pokemon which are known as "shiny" pokemon. These shiny forms are exceedingly rare, however, there are some known strategies to improve a players chances of encountering one. This app was developed as a tool to assist in the hunting of shiny pokemon in the Pokemon Scarlet/Violet games. 
+It includes a counter to track outbreak pokemon, a pokedex to provide info on each pokemon, including an image of both their default and shiny forms and a recommended sandwiches list to assist in shiny hunting, as well as a list of all recommended sandwiches, and a brief shiny-hunting guide.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
