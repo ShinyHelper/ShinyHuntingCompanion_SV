@@ -1,10 +1,15 @@
 # Shiny Hunting Companion
 
 Pokemon is a popular game series where players can collect creatures called pokemon. Rarely, players can find alternate forms of pokemon which are known as "shiny" pokemon. These shiny forms are exceedingly rare, however, there are some known strategies to improve a players chances of encountering one. This app was developed as a tool to assist in the hunting of shiny pokemon in the Pokemon Scarlet/Violet games. 
-It includes a counter to track outbreak pokemon, a pokedex to provide info on each pokemon, including an image of both their default and shiny forms and a recommended sandwiches list to assist in shiny hunting, as well as a list of all recommended sandwiches, and a brief shiny-hunting guide.
+It includes a counter to track outbreak pokemon. A pokedex to provide info on each pokemon, including: an image of both their default and shiny forms, warnings for any self-harming moves the pokemon may have, and a recommended sandwiches list to assist in shiny hunting. As well as a list of all recommended sandwiches, and a brief shiny-hunting guide.
 
+# Routes - 
+There are 4 available routes in this app:
+### /guide - A page containing a guide on how to hunt for shiny pokemon
+### /sandwiches - A page containing a list of recommended sandwiches
+### /counter - A page to track how many pokemon have been cleared in a given outbreak
+### /search/:pokemon - Each pokemon has a separate page containing information related to that pokemon. These pages are reachable by searching using the searchbar, as some pokemon have specific naming conventions: e.g. Morpeko-full-belly or Tauros-paldea-combat-breed
 
-# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -50,26 +55,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `npm run build` fails to minify
 
